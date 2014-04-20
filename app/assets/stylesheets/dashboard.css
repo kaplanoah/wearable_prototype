@@ -1,6 +1,13 @@
+html {
+  font-family: sans-serif;
+  background-color: grey;
+  color: darkblue;
+  margin: 10px;
+}
+
 #dashboard {
   width: 700px;
   height: 400px;
-  border: 1px solid blue;
+  border: 1px solid darkblue;
   overflow: auto;
 }
