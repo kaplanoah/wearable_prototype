@@ -15,23 +15,26 @@ class DashboardController < ApplicationController
 
       port.write "v"
 
-      values_string = ""
+      arduino_input_string = ""
       port_line = ""
       i = 1
 
       until port_line.include? "end"
         port_line = port.readline(i)
-        values_string += port_line
+        arduino_input_string += port_line
         i += 1
       end
 
-      values_array = values_string.split("\r\n")
+      arduino_input_array = arduino_input_string.split("\r\n")
+
+      pulseValues = []
+
     rescue
-      values_array = ["no values received. please make sure device is plugged in."]
+      pulseValues = ["no values received. please make sure device is plugged in. (port: #{port_file})"]
     end
 
     respond_to do |f|
-      f.json { render :json=> values_array }
+      f.json { render :json=> pulseValues }
     end
   end
 
