@@ -4,7 +4,7 @@ A dashboard for a prototype of a wearable device built in the [iRoboticist Works
 
 ### Key files
 
-- [arduino_port_read.ino](../../blob/master/arduino_port_read.ino) (C++ code for arduino, not part of rails app)
+- arduino > [wearable.ino](../../blob/master/arduino/wearable.ino) (C++ code for arduino, not part of rails app)
 - app > controllers > [dashboard_controller.rb](../../blob/master/app/controllers/dashboard_controller.rb)
 - app > assets > javascrips > [dashboard.js](../../blob/master/app/assets/javascripts/dashboard.js)
 - app > views > dashboard > [main.html.erb](../../blob/master/app/views/dashboard/main.html.erb)
