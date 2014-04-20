@@ -1,10 +1,10 @@
 ## Wearable prototype
 
-A dashboard for a prototype of a wearable device built in the [iRoboticist Workshop](http://workshop.iroboticist.com/)
+A dashboard for a prototype of a wearable device built in the [iRoboticist Workshop](http://workshop.iroboticist.com/).
 
 ### Key files
 
-- app > assets > javascrips > [dashboard.js](../../blob/master/app/assets/javascripts/papers_controller.rb)
+- app > assets > javascrips > [dashboard.js](../../blob/master/app/assets/javascripts/dashboard.js)
 - app > controllers > [dashboard_controller.rb](../../blob/master/app/controllers/dashboard_controller.rb)
 - app > views > dashboard > [main.html.erb](../../blob/master/app/views/dashboard/main.html.erb)
 
