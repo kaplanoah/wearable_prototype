@@ -13,7 +13,7 @@ class DashboardController < ApplicationController
     begin
       port = SerialPort.new(port_file, baud_rate, data_bits, stop_bits, parity)
 
-      port.write "b"
+      port.write "v"
 
       values_string = ""
       port_line = ""

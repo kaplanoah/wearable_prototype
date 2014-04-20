@@ -4,4 +4,3 @@ importValues = function(){
     $('#dashboard').append(data);
   });
 }
-
