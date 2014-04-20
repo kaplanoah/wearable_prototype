@@ -27,14 +27,21 @@ class DashboardController < ApplicationController
 
       arduino_input_array = arduino_input_string.split("\r\n")
 
-      pulseValues = []
+      pulse_values = []
+
+      pointer = arduino_input_array[-2].to_i
+
+      (arduino_input_array.length - 4).times do
+        pulse_values.push(arduino_input_array[pointer].to_i)
+        pointer == 50 ? ( pointer = 1 ) : ( pointer += 1 )
+      end
 
     rescue
-      pulseValues = ["no values received. please make sure device is plugged in. (port: #{port_file})"]
+      pulse_values = ["no values received. please make sure device is plugged in. (port: #{port_file})"]
     end
 
     respond_to do |f|
-      f.json { render :json=> pulseValues }
+      f.json { render :json=> pulse_values }
     end
   end
 
