@@ -36,12 +36,16 @@ class DashboardController < ApplicationController
         pointer == 50 ? ( pointer = 1 ) : ( pointer += 1 )
       end
 
+      average = pulse_values.inject{ |sum, el| sum + el }. / pulse_values.length
+      max = pulse_values.max
+      min = pulse_values.min
+
     rescue
       pulse_values = ["no values received. please make sure device is plugged in. (port: #{port_file})"]
     end
 
     respond_to do |f|
-      f.json { render :json => { :values => pulse_values } }
+      f.json { render :json => { :values => pulse_values, :average => average, :max => max, :min => min } }
     end
   end
 

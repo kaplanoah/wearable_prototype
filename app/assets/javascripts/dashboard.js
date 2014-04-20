@@ -11,6 +11,14 @@ $(document).ready(function(){
 
   function importValues(){
     $.get('/import_values.json').done(function(data){
+      $('#average').empty();
+      $('#max').empty();
+      $('#min').empty();
+
+      $('#average').append(data.average);
+      $('#max').append(data.max);
+      $('#min').append(data.min);
+
       drawGraph(data.values);
     });
   }
