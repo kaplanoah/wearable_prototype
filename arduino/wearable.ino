@@ -13,7 +13,8 @@ www.pulsesensor.com
 
 
 /* DELETE THIS LATER */
-int pulseRate[20] = {125, 126, 127, 128, 129, 128, 131, 138, 132, 127};
+int pulseRate[50];
+int pulseArrayPointer = 0;
 
 
 #include <Adafruit_GFX.h>
@@ -49,10 +50,14 @@ void loop(){
   
   if (Serial.available() > 0) {
     byte byte_read = Serial.read();
-    got_char((char)byte_read);
+    direct_from_char((char)byte_read);
   }
   
   if (QS == true){
+
+    pulseRate[pulseArrayPointer] = BPM;
+    incrementPointer();
+
     display.clearDisplay();    
     display.setTextColor(BLACK);
     display.setCursor(20,5);
@@ -67,20 +72,29 @@ void loop(){
   delay(20);
 }
 
-void got_char(char x) {
-  if (x == 'v') {
+void incrementPointer(){
+  if ( pulseArrayPointer == 49 ) {
+    pulseArrayPointer = 0;
+  } else {
+    pulseArrayPointer ++;
+  }
+}
+
+void direct_from_char(char x) {
+  if ( x == 'v' ) {
     writeValues();
   }
 }
 
 void writeValues() {
-  
   digitalWrite(13, HIGH);
 
   Serial.println("pulseRate");
   for(int i = 0; i < (sizeof(pulseRate) / sizeof(pulseRate[0])); i++) {
-   Serial.println(pulseRate[i]);
+    Serial.println(pulseRate[i]);
   }
+  Serial.println("pulseArrayPointer");
+  Serial.println(pulseArrayPointer);
   Serial.println("end");
 
   digitalWrite(13, LOW);
