@@ -41,7 +41,7 @@ class DashboardController < ApplicationController
     end
 
     respond_to do |f|
-      f.json { render :json=> pulse_values }
+      f.json { render :json => { :values => pulse_values } }
     end
   end
 

@@ -11,7 +11,7 @@ $(document).ready(function(){
 
   function importValues(){
     $.get('/import_values.json').done(function(data){
-      drawGraph(data);
+      drawGraph(data.values);
     });
   }
 
@@ -21,7 +21,7 @@ $(document).ready(function(){
       labels : blankLabels,
       datasets : [
         {
-          fillColor   : "red",
+          fillColor   : "#F00A0A",
           strokeColor : "darkred",
           pointColor  : "white",
           pointStrokeColor : "grey",
