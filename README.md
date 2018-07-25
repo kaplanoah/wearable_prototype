@@ -1,23 +1,24 @@
-## Wearable prototype
+# Wearable prototype
 
-A dashboard for a prototype of a wearable device built in the [iRoboticist Workshop](http://workshop.iroboticist.com/).
+A dashboard for a prototype of a wearable device built at an [iRoboticist Workshop](http://workshop.iroboticist.com/).
 
-### Key files
+<img width="500px" src="https://i.imgur.com/fqYZahN.png">
 
-- arduino > [wearable.ino](../../blob/master/arduino/wearable.ino) (C++ code for arduino, not part of rails app)
-- app > controllers > [dashboard_controller.rb](../../blob/master/app/controllers/dashboard_controller.rb)
-- app > assets > javascrips > [dashboard.js](../../blob/master/app/assets/javascripts/dashboard.js)
-- app > views > dashboard > [main.html.erb](../../blob/master/app/views/dashboard/main.html.erb)
 
-### To launch app
+## Installing
 
-Locally: fork and clone app. From terminal, in app's directory, run:
+Clone the repository.
+
+In terminal, navigate to the application's directory and run:
 
     bundle install
     rails s
 
-In web browser, visit:
+Then visit:
 
-    http://localhost:3000/
+http://localhost:3000/
 
-__NOTE:__ the app expects serial port input
+
+## Using
+
+The app requires serial port input from the prototype.

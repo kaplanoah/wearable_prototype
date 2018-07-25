@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
   end
 
   def import_values
-    port_file = '/dev/tty.usbmodemfd121' 
+    port_file = '/dev/tty.usbmodemfd121'
     baud_rate = 9600
     data_bits = 8
     stop_bits = 1
